@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./cube.css" />
+  </head>
+  <body>
+    <div id="box">
+        <div id="div">
+            <span>前</span>
+            <span>右</span>
+            <span>后</span>
+            <span>左</span>
+            <span>上</span>
+            <span>下</span>
+        </div>
+    </div>    
+    <script>
+        window.onload= function(){
+            var div= document.querySelector('#div');
+            div.style.WebkitTransform= div.style.transform= "rotateX(360deg)";
+        };
+    </script>
+  </body>
+</html>
