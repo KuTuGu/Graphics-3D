@@ -17,12 +17,19 @@ const displayCanvas = document.getElementById("webgl"),
 context = getWebGLContext(displayCanvas);
 
 context.clearColor(0.0, 0.0, 0.0, 1);
-context.clear(context.COLOR_BUFFER_BIT);
 
 if(!initShaders(context, VSHADER_SOURCE, FSHADER_SOURCE)){
-throw new Error('Fail to initialize shaders.');
+    throw new Error('Fail to initialize shaders.');
 }
 
 const aPosition = context.getAttribLocation(context.program, 'aPosition');
-context.vertexAttrib1f(aPosition, 0.0);
-context.drawArrays(context.POINTS, 0, 1);
+
+displayCanvas.addEventListener('click', (e) => {
+    context.clear(context.COLOR_BUFFER_BIT);
+    
+    context.vertexAttrib2f(aPosition, (e.offsetX - displayCanvas.width / 2) / (displayCanvas.width / 2), (-e.offsetY + displayCanvas.height / 2) / (displayCanvas.height / 2));
+
+    context.drawArrays(context.POINTS, 0, 1);
+})
+
+

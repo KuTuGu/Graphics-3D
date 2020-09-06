@@ -2,7 +2,7 @@
 // Vertex shader program
 var VSHADER_SOURCE =
   'attribute vec4 a_Position;\n' +
-  'attribute vec4 a_Normal;\n' +
+  'attribute vec3 a_Normal;\n' +
   'uniform mat4 u_MvpMatrix;\n' +
   'uniform mat4 u_NormalMatrix;\n' +
   'varying vec4 v_Color;\n' +

@@ -167,6 +167,7 @@ function initEventHandlers(canvas, currentAngle) {
 
 var g_MvpMatrix = new Matrix4(); // Model view projection matrix
 function draw(gl, n, viewProjMatrix, u_MvpMatrix, currentAngle) {
+  console.log(currentAngle)
   // Caliculate The model view projection matrix and pass it to u_MvpMatrix
   g_MvpMatrix.set(viewProjMatrix);
   g_MvpMatrix.rotate(currentAngle[0], 1.0, 0.0, 0.0); // Rotation around x-axis
